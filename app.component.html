@@ -1,0 +1,30 @@
+<!-- Button to Open Modal -->
+ <div class="main-button">
+<button (click)="openModal()" style="color:white;
+    background-color: blue;" >Open Modal</button>
+</div>
+<!-- Modal (Visible when isModalOpen is true) -->
+<div *ngIf="isModalOpen" class="modal-overlay">
+  <div class="modal">
+    <p style="color:BLACK; text-align: right;" (click)="closeModal()" >&times;</p>
+    <h2>Fill the Details</h2>
+     
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="user.name" />
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="user.email" />
+
+    <label>Age:</label>
+    <input type="number" [(ngModel)]="user.age" />
+
+    <label>Country:</label>
+    <input type="text" [(ngModel)]="user.country" />
+
+    <div class="modal-buttons">
+      <button (click)="submitForm()">Submit</button>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
